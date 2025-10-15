@@ -43,7 +43,7 @@
 	}
 
 	.background {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: -1;
@@ -56,7 +56,7 @@
 		);
 		background-size: 2000px 2000px;
 		width: 100vw;
-		height: 100vh;
+		height: 100%;
 		animation: pan 30s linear infinite;
 	}
 
