@@ -21,7 +21,7 @@
 			style={link.background ? `background: ${link.background}` : ''}
 		>
 			{#if link.logo}
-				<img src={link.logo} alt={link.name} />
+				<img src={link.logo} alt={`${link.name} logo`} />
 			{/if}
 			{#if link.name}
 				<p>{link.name}</p>
