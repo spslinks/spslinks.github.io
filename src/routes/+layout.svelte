@@ -12,20 +12,8 @@
 
 	<title>SPS Links</title>
 
-	<link
-		rel="icon"
-		href="https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-150x150.png"
-		sizes="32x32"
-	/>
-	<link
-		rel="icon"
-		href="https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-300x300.png"
-		sizes="192x192"
-	/>
-	<link
-		rel="apple-touch-icon"
-		href="https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-300x300.png"
-	/>
+	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128" />
+	<link rel="apple-touch-icon" href="/favicon.ico" />
 </svelte:head>
 
 {@render children?.()}
