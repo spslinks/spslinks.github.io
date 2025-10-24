@@ -23,6 +23,8 @@
 	</noscript>
 
 	<title>SPS Links</title>
+	<meta property="og:title" content="SPS Links">
+	<meta name="title" content="SPS Links">
 
 	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128" />
 	<link rel="apple-touch-icon" href="/favicon.ico" />
