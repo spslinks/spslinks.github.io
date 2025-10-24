@@ -26,6 +26,11 @@
 
 	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128" />
 	<link rel="apple-touch-icon" href="/favicon.ico" />
+
+	<meta
+		name="description"
+		content="Service for St. Paul's School to have easy access to links such as Classroom, Intranet, Lunch Menu and more."
+	/>
 </svelte:head>
 
 {@render children?.()}

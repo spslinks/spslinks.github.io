@@ -1,19 +1,18 @@
 <script>
-	import { LINKS, MOBILE_LAYOUT, DESKTOP_LAYOUT } from '$lib/links.js';
-	import { onMount } from 'svelte';
-	let width = $state(0);
-	let isMobile = $derived(width < 768);
-	let layout = $derived(isMobile ? MOBILE_LAYOUT : DESKTOP_LAYOUT);
-	let linkContainerStyle = $derived(
-		`grid-template-columns: repeat(${layout[0]}, 1fr); grid-template-rows: repeat(${layout[1]}, 1fr);`
-	);
+	import { LINKS } from '$lib/links.js';
+	// let width = $state(0);
+	// let isMobile = $derived(width < 768);
+	// let layout = $derived(isMobile ? MOBILE_LAYOUT : DESKTOP_LAYOUT);
+	// let linkContainerStyle = $derived(
+	// 	`grid-template-columns: repeat(${layout[0]}, 1fr); grid-template-rows: repeat(${layout[1]}, 1fr);`
+	// );
 </script>
 
-<svelte:window bind:innerWidth={width} />
+<!-- <svelte:window bind:innerWidth={width} /> -->
 
 <div class="background"></div>
 
-<div class="link-container" style={linkContainerStyle}>
+<div class="link-container">
 	{#each LINKS as link}
 		<a
 			class="item"
@@ -61,6 +60,11 @@
 	}
 
 	div.link-container {
+		--mobile-cols: 3;
+		--mobile-rows: 7;
+		--desktop-cols: 5;
+		--desktop-rows: 4;
+
 		padding: 0.5em;
 
 		width: 100%;
@@ -68,6 +72,9 @@
 		z-index: 10;
 		display: grid;
 		gap: 0.5em;
+
+		grid-template-columns: repeat(var(--desktop-cols), 1fr);
+		grid-template-rows: repeat(var(--desktop-rows), 1fr);
 
 		.item {
 			justify-content: center;
@@ -108,6 +115,13 @@
 			p {
 				text-decoration: none;
 			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		div.link-container {
+			grid-template-columns: repeat(var(--mobile-cols), 1fr);
+			grid-template-rows: repeat(var(--mobile-rows), 1fr);
 		}
 	}
 </style>
