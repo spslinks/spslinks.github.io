@@ -54,7 +54,7 @@ export const LINKS = [
     {
         name: 'SOCS',
         link: 'https://www.socscms.com/login/232/pupil',
-        logo: 'images/croppedsocslogo.png',
+        logo: 'images/SOCS.png',
     },
     {
         name: 'Pupil Portal',

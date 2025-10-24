@@ -76,6 +76,9 @@
 		grid-template-columns: repeat(var(--desktop-cols), 1fr);
 		grid-template-rows: repeat(var(--desktop-rows), 1fr);
 
+		text-decoration: none !important;
+		border-bottom: none !important;
+
 		.item {
 			justify-content: center;
 			align-items: center;
@@ -89,6 +92,9 @@
 
 			transition: 0.4s linear;
 
+			text-decoration: none !important;
+			border-bottom: none !important;
+
 			img {
 				height: 50px;
 			}
@@ -101,12 +107,19 @@
 				margin: 5px;
 				box-sizing: border-box;
 				text-decoration: none !important;
+				outline: none !important;
+				border-bottom: none !important;
 			}
 		}
 
-		/* .item:has(img) p {
-        bottom: 10px;
-    } */
+		.item:visited {
+			text-decoration: none !important;
+			border-bottom: none !important;
+		}
+
+		.item:has(img) p {
+			bottom: 10px;
+		}
 
 		.item:hover {
 			background: rgba(0, 0, 0, 0.2);
