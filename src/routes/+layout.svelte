@@ -21,10 +21,6 @@
 			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 		/>
 	</noscript>
-
-	<title>SPS Links</title>
-	<meta property="og:title" content="SPS Links">
-	<meta name="title" content="SPS Links">
 </svelte:head>
 
 {@render children?.()}
