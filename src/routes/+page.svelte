@@ -100,7 +100,7 @@
 			}
 
 			p {
-				font-family: 'Nunito', 'Courier New', Courier, monospace;
+				font-family: 'Nunito', 'Arial Rounded MT', 'Helvetica', monospace;
 				color: hsl(0, 0%, 80%);
 				font-size: 20px;
 				font-weight: bold;
