@@ -203,8 +203,8 @@
 	}
 
 	@media (max-width: 767px) {
-		.item p {
-			font-size: 15px;
+		div.link-container .item p {
+			font-size: 15px !important; /* why did i do this */
 		}
 	}
 
