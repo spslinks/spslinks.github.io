@@ -35,7 +35,7 @@
 			<button
 				class="unbuttonize item"
 				onclick={() => {
-					if (menuOpen) {
+					if (menuOpen || isMobile) {
 						window.open(link.link, '_blank').focus();
 					}
 
