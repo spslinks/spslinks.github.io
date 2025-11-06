@@ -1,11 +1,13 @@
 <script>
 	import { LINKS } from '$lib/links.js';
+	
 	// let width = $state(0);
 	// let isMobile = $derived(width < 768);
 	// let layout = $derived(isMobile ? MOBILE_LAYOUT : DESKTOP_LAYOUT);
 	// let linkContainerStyle = $derived(
 	// 	`grid-template-columns: repeat(${layout[0]}, 1fr); grid-template-rows: repeat(${layout[1]}, 1fr);`
 	// );
+
 </script>
 
 <!-- <svelte:window bind:innerWidth={width} /> -->
@@ -128,6 +130,12 @@
 			p {
 				text-decoration: none;
 			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		.item p {
+			font-size: 15px;
 		}
 	}
 
