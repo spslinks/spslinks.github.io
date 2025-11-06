@@ -1,36 +1,96 @@
 <script>
 	import { LINKS } from '$lib/links.js';
-	
-	// let width = $state(0);
-	// let isMobile = $derived(width < 768);
-	// let layout = $derived(isMobile ? MOBILE_LAYOUT : DESKTOP_LAYOUT);
-	// let linkContainerStyle = $derived(
-	// 	`grid-template-columns: repeat(${layout[0]}, 1fr); grid-template-rows: repeat(${layout[1]}, 1fr);`
-	// );
 
+	let width = $state(1000);
+	let isMobile = $derived(width < 768);
+
+	const images = import.meta.glob('$lib/assets/menus/*.png', { eager: true, import: 'default' });
+
+	const today = new Date();
+
+	const dateRangeRegex = /(\d{2})-(\d{2})-(\d{2})_(\d{2})-(\d{2})-(\d{2})/;
+
+	const activeImage = Object.entries(images)
+		.map(([path, src]) => {
+			const match = path.match(dateRangeRegex);
+			if (!match) return null;
+			const [_, d1, m1, y1, d2, m2, y2] = match;
+			const start = new Date(`20${y1}-${m1}-${d1}`); // prepend 20 for YY
+			const end = new Date(`20${y2}-${m2}-${d2}`);
+			return { src, start, end };
+		})
+		.filter(Boolean)
+		.find(({ start, end }) => today >= start && today <= end)?.src;
+
+	let menuOpen = $state(false); //change to false
 </script>
 
-<!-- <svelte:window bind:innerWidth={width} /> -->
+<svelte:window bind:innerWidth={width} />
 
 <div class="background"></div>
 
 <div class="link-container">
 	{#each LINKS as link}
-		<a
-			class="item"
-			href={link.link}
-			target="_blank"
-			style={link.background ? `background: ${link.background}` : ''}
-		>
-			{#if link.logo}
-				<img src={link.logo} alt={`${link.name} logo`} />
-			{/if}
-			{#if link.name}
-				<p>{link.name}</p>
-			{/if}
-		</a>
+		{#if link.name == 'Lunch Menu'}
+			<button
+				class="unbuttonize item"
+				onclick={() => {
+					if (menuOpen) {
+						window.open(link.link, '_blank').focus();
+					}
+
+					if (activeImage) {
+						menuOpen = true;
+					} else {
+						window.open(link.link, '_blank').focus();
+					}
+
+				}}
+				style={link.background ? `background: ${link.background}` : ''}
+			>
+				{#if link.logo}
+					<img src={link.logo} alt={`${link.name} logo`} />
+				{/if}
+				{#if link.name}
+					<p>{link.name}</p>
+				{/if}
+			</button>
+		{:else}
+			<a
+				class="item"
+				href={link.link}
+				target="_blank"
+				style={link.background ? `background: ${link.background}` : ''}
+			>
+				{#if link.logo}
+					<img src={link.logo} alt={`${link.name} logo`} />
+				{/if}
+				{#if link.name}
+					<p>{link.name}</p>
+				{/if}
+			</a>
+		{/if}
 	{/each}
 </div>
+
+{#if menuOpen && activeImage && !isMobile}
+	<button
+		class="popout-container"
+		onclick={() => {
+			menuOpen = false;
+		}}
+		onkeydown={(e) => {
+			if (e.key === 'Escape') {
+				menuOpen = false;
+			}
+		}}
+	>
+		<div class="popout menu">
+			<img src={activeImage} alt="today's lunch menu" />
+			<p>click anywhere to exit</p>
+		</div>
+	</button>
+{/if}
 
 <style>
 	@keyframes pan {
@@ -59,6 +119,15 @@
 		width: 100vw;
 		height: 100%;
 		animation: pan 30s linear infinite;
+	}
+
+	.unbuttonize {
+		border: none;
+		margin: 0;
+		padding: 0;
+		text-align: inherit;
+		font: inherit;
+		border-radius: 0;
 	}
 
 	div.link-container {
@@ -144,5 +213,59 @@
 			grid-template-columns: repeat(var(--mobile-cols), 1fr);
 			grid-template-rows: repeat(var(--mobile-rows), 1fr);
 		}
+	}
+
+	.popout-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		padding: 3em;
+
+		height: 100vh;
+		height: 100dvh;
+
+		width: 100vw;
+		width: 100dvw;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background-color: rgba(0, 0, 0, 0.65);
+
+		border: none;
+		margin: 0;
+		text-align: inherit;
+		font: inherit;
+		border-radius: 0;
+	}
+
+	div.menu {
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		flex-direction: column;
+	}
+
+	div.menu img {
+		width: auto;
+		height: 100%;
+		border-radius: 20px;
+
+		opacity: 0.9;
+	}
+
+	div.menu p {
+		font-family: 'Nunito', 'Arial Rounded MT', 'Helvetica', monospace;
+		color: hsl(0, 0%, 80%);
+		font-size: 30px;
+		font-weight: bold;
+		margin: 5px;
+		box-sizing: border-box;
 	}
 </style>
