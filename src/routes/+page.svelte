@@ -20,7 +20,7 @@
 			return { src, start, end };
 		})
 		.filter(Boolean)
-		.find(({ start, end }) => today >= start && today < end)?.src;
+		.find(({ start, end }) => (today >= start && today < end))?.src;
 
 	let menuOpen = $state(false); //change to false
 </script>
