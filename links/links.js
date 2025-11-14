@@ -46,7 +46,7 @@ let links = [
     },
     {
         name: 'Outlook',
-        link: 'https://webmail.stpaulsschool.org.uk/owa/',
+        link: 'https://outlook.office.com/mail/0/inbox',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg',
     },
     {
