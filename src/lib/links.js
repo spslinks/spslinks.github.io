@@ -49,7 +49,7 @@ export const LINKS = [
     {
         name: 'Outlook',
         link: 'https://outlook.office.com/mail/0/',
-        logo: 'https://commons.wikimedia.org/wiki/File:Microsoft_Outlook_Icon_(2025%E2%80%93present).svg',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Microsoft_Outlook_Icon_%282025%E2%80%93present%29.svg',
     },
     {
         name: 'SOCS',
