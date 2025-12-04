@@ -5,25 +5,25 @@
 	let width = $state(1000);
 	let isMobile = $derived(width < 768);
 
-	const images = import.meta.glob('$lib/assets/menus/*.png', { eager: true, import: 'default' });
+	// const images = import.meta.glob('$lib/assets/menus/*.png', { eager: true, import: 'default' });
 
-	const today = new Date();
+	// const today = new Date();
 
-	const dateRangeRegex = /(\d{2})-(\d{2})-(\d{2})_(\d{2})-(\d{2})-(\d{2})/;
+	// const dateRangeRegex = /(\d{2})-(\d{2})-(\d{2})_(\d{2})-(\d{2})-(\d{2})/;
 
-	const activeImage = Object.entries(images)
-		.map(([path, src]) => {
-			const match = path.match(dateRangeRegex);
-			if (!match) return null;
-			const [_, d1, m1, y1, d2, m2, y2] = match;
-			const start = new Date(`20${y1}-${m1}-${d1}`); // prepend 20 for YY
-			const end = new Date(`20${y2}-${m2}-${d2}`);
-			return { src, start, end };
-		})
-		.filter(Boolean)
-		.find(({ start, end }) => today >= start && today < end)?.src;
+	// const activeImage = Object.entries(images)
+	// 	.map(([path, src]) => {
+	// 		const match = path.match(dateRangeRegex);
+	// 		if (!match) return null;
+	// 		const [_, d1, m1, y1, d2, m2, y2] = match;
+	// 		const start = new Date(`20${y1}-${m1}-${d1}`); // prepend 20 for YY
+	// 		const end = new Date(`20${y2}-${m2}-${d2}`);
+	// 		return { src, start, end };
+	// 	})
+	// 	.filter(Boolean)
+	// 	.find(({ start, end }) => today >= start && today < end)?.src;
 
-	let menuOpen = $state(false); //change to false
+	// let menuOpen = $state(false); //change to false
 
 	const DESKTOP_ROWS = 5;
 
