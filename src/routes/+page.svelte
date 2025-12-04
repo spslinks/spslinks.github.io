@@ -1,5 +1,6 @@
 <script>
 	import { LINKS } from '$lib/links.js';
+	import { onMount } from 'svelte';
 
 	let width = $state(1000);
 	let isMobile = $derived(width < 768);
@@ -20,9 +21,38 @@
 			return { src, start, end };
 		})
 		.filter(Boolean)
-		.find(({ start, end }) => (today >= start && today < end))?.src;
+		.find(({ start, end }) => today >= start && today < end)?.src;
 
 	let menuOpen = $state(false); //change to false
+
+	const DESKTOP_ROWS = 5;
+
+	onMount(() => {
+		if (!isMobile) {
+			const items = document.querySelectorAll('.item');
+			let step = 0;
+
+			function index(row, col) {
+				return row * DESKTOP_ROWS + col;
+			}
+
+			const rows = Math.ceil(items.length / DESKTOP_ROWS);
+			const maxDiag = rows + DESKTOP_ROWS - 1;
+
+			for (let d = 0; d < maxDiag; d++) {
+				for (let row = 0; row < rows; row++) {
+					const col = d - row;
+					const i = index(row, col);
+					if (col >= 0 && col < DESKTOP_ROWS && i < items.length) {
+						setTimeout(() => {
+							items[i].classList.add('shown');
+						}, step * 30);
+						step++;
+					}
+				}
+			}
+		}
+	});
 </script>
 
 <svelte:window bind:innerWidth={width} />
@@ -31,45 +61,19 @@
 
 <div class="link-container">
 	{#each LINKS as link}
-		{#if link.name == 'Lunch Menu'}
-			<button
-				class="unbuttonize item"
-				onclick={() => {
-					if (menuOpen || isMobile) {
-						window.open(link.link, '_blank').focus();
-					}
-
-					if (activeImage) {
-						menuOpen = true;
-					} else {
-						window.open(link.link, '_blank').focus();
-					}
-
-				}}
-				style={link.background ? `background: ${link.background}` : ''}
-			>
-				{#if link.logo}
-					<img src={link.logo} alt={`${link.name} logo`} />
-				{/if}
-				{#if link.name}
-					<p>{link.name}</p>
-				{/if}
-			</button>
-		{:else}
-			<a
-				class="item"
-				href={link.link}
-				target="_blank"
-				style={link.background ? `background: ${link.background}` : ''}
-			>
-				{#if link.logo}
-					<img src={link.logo} alt={`${link.name} logo`} />
-				{/if}
-				{#if link.name}
-					<p>{link.name}</p>
-				{/if}
+		<div class="container">
+			<a class="item" href={link.link} target="_blank">
+				<div class="front" style={link.background ? `background: ${link.background}` : ''}>
+					{#if link.logo}
+						<img src={link.logo} alt={`${link.name} logo`} />
+					{/if}
+					{#if link.name}
+						<p>{link.name}</p>
+					{/if}
+				</div>
+				<div class="back"></div>
 			</a>
-		{/if}
+		</div>
 	{/each}
 </div>
 
@@ -150,39 +154,6 @@
 		text-decoration: none !important;
 		border-bottom: none !important;
 
-		.item {
-			justify-content: center;
-			align-items: center;
-			display: flex;
-			flex-direction: column;
-			position: relative;
-			border-radius: 20px;
-			padding: 2px;
-
-			background: rgba(0, 0, 0, 0.05);
-
-			transition: 0.4s linear;
-
-			text-decoration: none !important;
-			border-bottom: none !important;
-
-			img {
-				height: 50px;
-			}
-
-			p {
-				font-family: 'Nunito', 'Arial Rounded MT', 'Helvetica', monospace;
-				color: hsl(0, 0%, 80%);
-				font-size: 20px;
-				font-weight: bold;
-				margin: 5px;
-				box-sizing: border-box;
-				text-decoration: none !important;
-				outline: none !important;
-				border-bottom: none !important;
-			}
-		}
-
 		.item:visited {
 			text-decoration: none !important;
 			border-bottom: none !important;
@@ -192,14 +163,102 @@
 			bottom: 10px;
 		}
 
-		.item:hover {
+		.item:not(.hidden):hover {
 			background: rgba(0, 0, 0, 0.2);
 			transform: scale(1.05, 1.05);
-
-			p {
-				text-decoration: none;
-			}
 		}
+	}
+
+	.container {
+		-webkit-perspective: 1000;
+		-moz-perspective: 1000;
+		perspective: 1000;
+		width: 100%;
+		height: 100%;
+	}
+
+	.item {
+		width: 100%;
+		height: 100%;
+
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		border-radius: 20px;
+
+		transition: 0.4s linear;
+
+		text-decoration: none !important;
+		border-bottom: none !important;
+
+		background-color: transparent;
+	}
+
+	.front,
+	.back {
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	.front {
+		z-index: 3;
+
+		width: 100%;
+		height: 100%;
+
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		border-radius: 20px;
+		padding: 2px;
+
+		background: rgba(0, 0, 0, 0.05);
+
+		img {
+			height: 50px;
+		}
+
+		p {
+			font-family: 'Nunito', 'Arial Rounded MT', 'Helvetica', monospace;
+			color: hsl(0, 0%, 80%);
+			font-size: 20px;
+			font-weight: bold;
+			margin: 5px;
+			box-sizing: border-box;
+			text-decoration: none !important;
+			outline: none !important;
+			border-bottom: none !important;
+		}
+	}
+
+	.item:not(.shown) .front {
+		-webkit-transform: rotateY(180deg) rotateZ(135deg);
+		-moz-transform: rotateY(180deg) rotateZ(135deg);
+		transform: rotateY(180deg) rotateZ(135deg);
+	}
+
+	/* .item:not(.shown) .back {
+		-webkit-transform: rotateY(0deg);
+		-moz-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	} */
+
+	.back {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: rgba(0, 0, 0, 0.05);
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+		transform: rotateY(180deg);
 	}
 
 	@media (max-width: 767px) {
