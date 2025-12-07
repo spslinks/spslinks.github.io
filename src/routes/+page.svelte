@@ -123,14 +123,14 @@
 		animation: pan 30s linear infinite;
 	}
 
-	.unbuttonize {
+	/* .unbuttonize {
 		border: none;
 		margin: 0;
 		padding: 0;
 		text-align: inherit;
 		font: inherit;
 		border-radius: 0;
-	}
+	} */
 
 	div.link-container {
 		--mobile-cols: 3;
@@ -274,7 +274,7 @@
 		}
 	}
 
-	.popout-container {
+	/* .popout-container {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -326,5 +326,5 @@
 		font-weight: bold;
 		margin: 5px;
 		box-sizing: border-box;
-	}
+	} */
 </style>
