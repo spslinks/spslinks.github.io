@@ -28,27 +28,25 @@
 	const DESKTOP_ROWS = 5;
 
 	onMount(() => {
-		if (!isMobile) {
-			const items = document.querySelectorAll('.item');
-			let step = 0;
+		const items = document.querySelectorAll('.item');
+		let step = 0;
 
-			function index(row, col) {
-				return row * DESKTOP_ROWS + col;
-			}
+		function index(row, col) {
+			return row * DESKTOP_ROWS + col;
+		}
 
-			const rows = Math.ceil(items.length / DESKTOP_ROWS);
-			const maxDiag = rows + DESKTOP_ROWS - 1;
+		const rows = Math.ceil(items.length / DESKTOP_ROWS);
+		const maxDiag = rows + DESKTOP_ROWS - 1;
 
-			for (let d = 0; d < maxDiag; d++) {
-				for (let row = 0; row < rows; row++) {
-					const col = d - row;
-					const i = index(row, col);
-					if (col >= 0 && col < DESKTOP_ROWS && i < items.length) {
-						setTimeout(() => {
-							items[i].classList.add('shown');
-						}, step * 30);
-						step++;
-					}
+		for (let d = 0; d < maxDiag; d++) {
+			for (let row = 0; row < rows; row++) {
+				const col = d - row;
+				const i = index(row, col);
+				if (col >= 0 && col < DESKTOP_ROWS && i < items.length) {
+					setTimeout(() => {
+						items[i].classList.add('shown');
+					}, step * 30);
+					step++;
 				}
 			}
 		}
@@ -77,7 +75,7 @@
 	{/each}
 </div>
 
-{#if menuOpen && activeImage && !isMobile}
+<!-- {#if menuOpen && activeImage && !isMobile}
 	<button
 		class="popout-container"
 		onclick={() => {
@@ -94,7 +92,7 @@
 			<p>click anywhere to exit</p>
 		</div>
 	</button>
-{/if}
+{/if} -->
 
 <style>
 	@keyframes pan {
@@ -239,10 +237,22 @@
 		}
 	}
 
-	.item:not(.shown) .front {
-		-webkit-transform: rotateY(180deg) rotateZ(135deg);
-		-moz-transform: rotateY(180deg) rotateZ(135deg);
-		transform: rotateY(180deg) rotateZ(135deg);
+	@media (min-width: 767px) {
+		.item:not(.shown) .front {
+			-webkit-transform: rotateY(180deg) rotateZ(135deg);
+			-moz-transform: rotateY(180deg) rotateZ(135deg);
+			transform: rotateY(180deg) rotateZ(135deg);
+		}
+
+		.back {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: rgba(0, 0, 0, 0.05);
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+		}
 	}
 
 	/* .item:not(.shown) .back {
@@ -250,16 +260,6 @@
 		-moz-transform: rotateY(0deg);
 		transform: rotateY(0deg);
 	} */
-
-	.back {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		background: rgba(0, 0, 0, 0.05);
-		-webkit-transform: rotateY(180deg);
-		-moz-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-	}
 
 	@media (max-width: 767px) {
 		div.link-container .item p {

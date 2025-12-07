@@ -69,7 +69,7 @@ export const LINKS = [
     {
         name: 'Onshape',
         link: 'https://sps.onshape.com/',
-        logo: 'https://play-lh.googleusercontent.com/yAS9WJJnjlCx77RxIvJSssrixhCdUxnBlM3CuPnQpl8QI3Ez19KreBL4xREc1gtmK_Y',
+        logo: 'images/onshape.png',
     },
     {
         name: 'Foldr',
