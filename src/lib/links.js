@@ -4,52 +4,52 @@ export const LINKS = [
     {
         name: 'Classroom',
         link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fclassroom.google.com%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-        logo: 'https://edu.google.com/images/svg/gsuite-icons/classroom.svg',
+        logo: 'images/classroom.svg',
     },
     {
         name: 'To do',
         link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fclassroom.google.com%2Fa%2Fnot-turned-in%2Fall&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-        logo: 'https://edu.google.com/images/svg/gsuite-icons/classroom.svg',
+        logo: 'images/classroom.svg',
     },
     {
         name: 'Drive',
         link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdrive.google.com%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-        logo: 'https://edu.google.com/images/svg/gsuite-icons/drive.svg',
+        logo: 'images/drive.svg',
     },
     {
         name: 'Calendar',
         link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fu%2F0%2Fr%2Fweek&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-        logo: 'https://edu.google.com/images/svg/gsuite-icons/calendar.svg',
+        logo: 'images/Calendar.svg',
     },
     {
         name: 'Docs',
         link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-        logo: 'https://edu.google.com/images/svg/gsuite-icons/docs.svg',
+        logo: 'images/Docs.svg',
     },
     {
         name: 'Slides',
         link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fpresentation%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-        logo: 'https://edu.google.com/images/svg/gsuite-icons/slides.svg',
+        logo: 'images/Slides.svg',
     },
     {
         name: 'Sheets',
         link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-        logo: 'https://edu.google.com/images/svg/gsuite-icons/sheets.svg',
+        logo: 'images/Sheets.svg',
     },
     {
         name: 'Intranet',
         link: 'https://intranet.stpaulsschool.org.uk/',
-        logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpQrLMdOmPv-5P8m0lCZKW5iThTyVaTMLShg&s',
+        logo: 'images/Intranet.png',
     },
     {
         name: 'Lunch Menu',
         link: 'https://intranet.stpaulsschool.org.uk/catering',
-        logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpQrLMdOmPv-5P8m0lCZKW5iThTyVaTMLShg&s',
+        logo: 'images/Lunch Menu.png',
     },
     {
         name: 'Outlook',
         link: 'https://outlook.office.com/mail/0/',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Microsoft_Outlook_Icon_%282025%E2%80%93present%29.svg',
+        logo: 'images/outlook.png',
     },
     {
         name: 'SOCS',
@@ -59,12 +59,12 @@ export const LINKS = [
     {
         name: 'Pupil Portal',
         link: 'https://pupils.stpaulsschool.org.uk/',
-        logo: 'https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-300x300.png',
+        logo: 'images/sps.png',
     },
     {
         name: 'Library Catalogue',
         link: 'https://webopac.stpaulsschool.org.uk/cirqa-web-app/',
-        logo: 'https://cirqa.co.uk/wp-content/uploads/Book-heartturqtext.png',
+        logo: 'images/Library Catalogue.png',
     },
     {
         name: 'Onshape',
@@ -74,27 +74,27 @@ export const LINKS = [
     {
         name: 'Foldr',
         link: 'https://foldr.stpaulsschool.org.uk/',
-        logo: 'https://foldr.com/media/2023/05/cropped-Foldr-Icon-Main.png',
+        logo: 'images/Foldr.png',
     },
     {
         name: 'Maths Hub',
         link: 'https://sites.google.com/stpaulsschool.org.uk/team/home',
-        logo: 'https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-300x300.png',
+        logo: 'images/sps.png',
     },
     {
         name: 'History Hub',
         link: 'https://sites.google.com/stpaulsschool.org.uk/historyhub/home',
-        logo: 'https://www.stpaulsschool.org.uk/wp-content/uploads/2019/05/St-Pauls-Logo-300x300.png',
+        logo: 'images/sps.png',
     },
     {
         name: 'Book Blog',
         link: 'https://sps-bookblog.blogspot.com',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Blogger_icon_2017.svg/1024px-Blogger_icon_2017.svg.png'
+        logo: 'images/blog.png'
     },
     {
         name: 'Fun Dale Games',
         link: 'https://fundalegames.github.io/',
-        logo: 'https://external-preview.redd.it/youtube-dale-charman-travels-part-1-london-underground-full-v0-95z6YumopKViJMw9Y6RmkNRZwUFSNmo0xJKrCkrWS7I.jpg?format=pjpg&auto=webp&s=a4393ca52796ae88e3a97e2be893e8ca16be3b79'
+        logo: 'images/Fun Dale Games.jpg'
     },
     {
         name: 'Feedback',
