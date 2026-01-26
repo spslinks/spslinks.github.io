@@ -87,9 +87,10 @@ export const LINKS = [
         logo: 'images/sps.png',
     },
     {
-        name: 'Book Blog',
-        link: 'https://sps-bookblog.blogspot.com',
-        logo: 'images/blog.png'
+        name: 'Printing',
+        link: 'https://stpauls.uk.uniflowonline.com/#Dashboard',
+        logo: 'images/uniflow.png',
+        tag: 'NEW!'
     },
     {
         name: 'Fun Dale Games',

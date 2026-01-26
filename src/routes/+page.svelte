@@ -45,7 +45,7 @@
 				if (col >= 0 && col < DESKTOP_ROWS && i < items.length) {
 					setTimeout(() => {
 						items[i].classList.add('shown');
-					}, step * 30);
+					}, step * 10);
 					step++;
 				}
 			}
@@ -67,6 +67,9 @@
 					{/if}
 					{#if link.name}
 						<p>{link.name}</p>
+					{/if}
+					{#if link.tag}
+						<p class="tag">{link.tag}</p>
 					{/if}
 				</div>
 				<div class="back"></div>
@@ -234,6 +237,17 @@
 			text-decoration: none !important;
 			outline: none !important;
 			border-bottom: none !important;
+		}
+
+		.tag {
+			padding: 3px 30px;
+			background: rgb(143, 14, 14);
+			border-radius: 5px;
+
+			position: absolute;
+			bottom: 5px;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 
