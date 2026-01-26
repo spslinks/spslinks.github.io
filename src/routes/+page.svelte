@@ -225,6 +225,7 @@
 
 		img {
 			height: 50px;
+			border-radius: 5px;
 		}
 
 		p {

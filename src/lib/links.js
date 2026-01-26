@@ -44,7 +44,7 @@ export const LINKS = [
     {
         name: 'Lunch Menu',
         link: 'https://intranet.stpaulsschool.org.uk/catering',
-        logo: 'images/Lunch Menu.png',
+        logo: 'images/Intranet.png',
     },
     {
         name: 'Outlook',
