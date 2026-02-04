@@ -233,7 +233,7 @@
 			color: hsl(0, 0%, 80%);
 			font-size: 20px;
 			font-weight: bold;
-			margin: 5px;
+			margin: 7px;
 			box-sizing: border-box;
 			text-decoration: none !important;
 			outline: none !important;
