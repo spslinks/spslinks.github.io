@@ -1,5 +1,5 @@
-export const MOBILE_LAYOUT = [3,7];
-export const DESKTOP_LAYOUT = [5,4];
+// export const MOBILE_LAYOUT = [3,7];
+// export const DESKTOP_LAYOUT = [6,4];
 export const LINKS = [
     {
         name: 'Classroom',
@@ -62,7 +62,7 @@ export const LINKS = [
         logo: 'images/sps.png',
     },
     {
-        name: 'Library Catalogue',
+        name: 'Library',
         link: 'https://uk.accessit.online/stp53/#!dashboard',
         logo: 'images/Library Catalogue.png',
     },
@@ -90,12 +90,32 @@ export const LINKS = [
         name: 'Printing',
         link: 'https://stpauls.uk.uniflowonline.com/#Dashboard',
         logo: 'images/uniflow.png',
+    },
+    {
+        name: 'Word',
+        link: 'https://word.cloud.microsoft/en-gb/',
+        logo: 'images/word.svg',
+    },
+    {
+        name: 'Excel',
+        link: 'https://excel.cloud.microsoft/en-gb/',
+        logo: 'images/excel.svg',
+    },
+    {
+        name: 'Powerpoint',
+        link: 'https://powerpoint.cloud.microsoft/en-gb/',
+        logo: 'images/powerpoint.svg',
+    },
+    {
+        name: 'OneNote',
+        link: 'https://onenote.cloud.microsoft/en-gb',
+        logo: 'images/onenote.svg',
         tag: 'NEW!'
     },
     {
-        name: 'Fun Dale Games',
-        link: 'https://fundalegames.github.io/',
-        logo: 'images/Fun Dale Games.jpg'
+        name: 'OneDrive',
+        link: 'https://stpaulsschool1509-my.sharepoint.com/',
+        logo: 'images/onedrive.svg',
     },
     {
         name: 'Feedback',

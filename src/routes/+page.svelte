@@ -25,7 +25,7 @@
 
 	// let menuOpen = $state(false); //change to false
 
-	const DESKTOP_ROWS = 5;
+	const DESKTOP_ROWS = 6;
 
 	onMount(() => {
 		const items = document.querySelectorAll('.item');
@@ -137,8 +137,8 @@
 
 	div.link-container {
 		--mobile-cols: 3;
-		--mobile-rows: 7;
-		--desktop-cols: 5;
+		--mobile-rows: 8;
+		--desktop-cols: 6;
 		--desktop-rows: 4;
 
 		padding: 0.5em;
@@ -270,24 +270,31 @@
 		}
 	}
 
+	@media (max-width: 767px) {
+		div.link-container .item p {
+			font-size: 12px !important; /* why did i do this */
+		}
+
+		div.link-container .item img {
+			height: 30px;
+		}
+
+		div.link-container {
+			grid-template-columns: repeat(var(--mobile-cols), 1fr);
+			grid-template-rows: repeat(var(--mobile-rows), 1fr);
+		}
+
+		.tag {
+			display: none;
+		}
+	}
+
 	/* .item:not(.shown) .back {
 		-webkit-transform: rotateY(0deg);
 		-moz-transform: rotateY(0deg);
 		transform: rotateY(0deg);
 	} */
 
-	@media (max-width: 767px) {
-		div.link-container .item p {
-			font-size: 15px !important; /* why did i do this */
-		}
-	}
-
-	@media (max-width: 767px) {
-		div.link-container {
-			grid-template-columns: repeat(var(--mobile-cols), 1fr);
-			grid-template-rows: repeat(var(--mobile-rows), 1fr);
-		}
-	}
 
 	/* .popout-container {
 		position: absolute;
