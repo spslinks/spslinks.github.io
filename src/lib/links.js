@@ -63,7 +63,7 @@ export const LINKS = [
     },
     {
         name: 'Library Catalogue',
-        link: 'https://webopac.stpaulsschool.org.uk/cirqa-web-app/',
+        link: 'https://uk.accessit.online/stp53/#!dashboard',
         logo: 'images/Library Catalogue.png',
     },
     {
