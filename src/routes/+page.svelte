@@ -98,6 +98,13 @@
 {/if} -->
 
 <style>
+	:root {
+		--mobile-cols: 3;
+		--mobile-rows: 9;
+		--desktop-cols: 5;
+		--desktop-rows: 5;
+	}
+
 	@keyframes pan {
 		0% {
 			background-position: 0px 0%;
@@ -136,11 +143,6 @@
 	} */
 
 	div.link-container {
-		--mobile-cols: 3;
-		--mobile-rows: 8;
-		--desktop-cols: 6;
-		--desktop-rows: 4;
-
 		padding: 0.5em;
 
 		width: 100%;
@@ -226,6 +228,7 @@
 		img {
 			height: 50px;
 			border-radius: 5px;
+			margin: 7px 0px 0px 0px;
 		}
 
 		p {
@@ -245,13 +248,16 @@
 			background: rgb(143, 14, 14);
 			border-radius: 5px;
 
-			position: absolute;
-			bottom: 5px;
+			margin: 0px 7px;
+
+			/* position: absolute;
+			bottom: 3px;
 			left: 50%;
-			transform: translateX(-50%);
+			transform: translateX(-50%); */
 		}
 	}
 
+	/* desktop only */
 	@media (min-width: 767px) {
 		.item:not(.shown) .front {
 			-webkit-transform: rotateY(180deg) rotateZ(135deg);
@@ -270,7 +276,12 @@
 		}
 	}
 
+	/* mobile only */
 	@media (max-width: 767px) {
+		.item, .front {
+			border-radius: 10px;
+		}
+
 		div.link-container .item p {
 			font-size: 12px !important; /* why did i do this */
 		}
@@ -282,6 +293,7 @@
 		div.link-container {
 			grid-template-columns: repeat(var(--mobile-cols), 1fr);
 			grid-template-rows: repeat(var(--mobile-rows), 1fr);
+			gap: 0.25em;
 		}
 
 		.tag {
@@ -294,7 +306,6 @@
 		-moz-transform: rotateY(0deg);
 		transform: rotateY(0deg);
 	} */
-
 
 	/* .popout-container {
 		position: absolute;
