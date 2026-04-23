@@ -127,6 +127,6 @@ export const LINKS = [
 		link: 'https://forms.gle/rQR9btgXVkg6itiy8',
 		logo: '',
 		background:
-			'linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)'
+			'linear-gradient(45deg, rgba(131,58,180,0.5) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.5) 100%)'
 	}
 ];
