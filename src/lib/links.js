@@ -125,8 +125,8 @@ export const LINKS = [
 	{
 		name: 'Feedback',
 		link: 'https://forms.gle/rQR9btgXVkg6itiy8',
-		logo: '',
+		logo: 'images/Forms.png',
 		background:
-			'linear-gradient(45deg, rgba(131,58,180,0.5) 0%, rgba(253,29,29,0.5) 50%, rgba(252,176,69,0.5) 100%)'
+			'linear-gradient(45deg, rgba(131,58,180,0.2) 0%, rgba(253,29,29,0.2) 50%, rgba(252,176,69,0.2) 100%)'
 	}
 ];
