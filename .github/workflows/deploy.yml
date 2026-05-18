@@ -1,4 +1,8 @@
 name: Deploy to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 on:
   workflow_dispatch:
