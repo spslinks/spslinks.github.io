@@ -2,39 +2,39 @@
 // export const DESKTOP_LAYOUT = [6,4];
 export const LINKS = [
 	{
-		name: 'Classroom',
-		link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fclassroom.google.com%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-		logo: 'images/classroom.svg'
+		name: 'Teams',
+		link: 'https://teams.cloud.microsoft',
+		logo: 'images/teams.svg'
 	},
 	{
-		name: 'To do',
-		link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fclassroom.google.com%2Fa%2Fnot-turned-in%2Fall&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-		logo: 'images/classroom.svg'
+		name: 'Outlook',
+		link: 'https://outlook.office.com/mail/0/',
+		logo: 'images/outlook.png'
 	},
 	{
-		name: 'Drive',
-		link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdrive.google.com%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-		logo: 'images/drive.svg'
+		name: 'Word',
+		link: 'https://word.cloud.microsoft',
+		logo: 'images/word.svg'
 	},
 	{
-		name: 'Calendar',
-		link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fu%2F0%2Fr%2Fweek&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-		logo: 'images/Calendar.svg'
+		name: 'Excel',
+		link: 'https://excel.cloud.microsoft',
+		logo: 'images/excel.svg'
 	},
 	{
-		name: 'Docs',
-		link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-		logo: 'images/Docs.svg'
+		name: 'Powerpoint',
+		link: 'https://powerpoint.cloud.microsoft',
+		logo: 'images/powerpoint.svg'
 	},
 	{
-		name: 'Slides',
-		link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fpresentation%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-		logo: 'images/Slides.svg'
+		name: 'OneNote',
+		link: 'https://onenote.cloud.microsoft',
+		logo: 'images/onenote.svg'
 	},
 	{
-		name: 'Sheets',
-		link: 'https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2F&flowEntry=ServiceLogin&flowName=GlifWebSignIn&hd=stpaulsschool.org.uk',
-		logo: 'images/Sheets.svg'
+		name: 'OneDrive',
+		link: 'https://stpaulsschool1509-my.sharepoint.com/',
+		logo: 'images/onedrive.svg'
 	},
 	{
 		name: 'Intranet',
@@ -45,11 +45,6 @@ export const LINKS = [
 		name: 'Lunch Menu',
 		link: 'https://intranet.stpaulsschool.org.uk/catering',
 		logo: 'images/Intranet.png'
-	},
-	{
-		name: 'Outlook',
-		link: 'https://outlook.office.com/mail/0/',
-		logo: 'images/outlook.png'
 	},
 	{
 		name: 'SOCS',
@@ -91,37 +86,8 @@ export const LINKS = [
 		link: 'https://stpauls.uk.uniflowonline.com/#Dashboard',
 		logo: 'images/uniflow.png'
 	},
-	{
-		name: 'Word',
-		link: 'https://word.cloud.microsoft/en-gb/',
-		logo: 'images/word.svg'
-	},
-	{
-		name: 'Excel',
-		link: 'https://excel.cloud.microsoft/en-gb/',
-		logo: 'images/excel.svg'
-	},
-	{
-		name: 'Powerpoint',
-		link: 'https://powerpoint.cloud.microsoft/en-gb/',
-		logo: 'images/powerpoint.svg'
-	},
-	{
-		name: 'OneNote',
-		link: 'https://onenote.cloud.microsoft/en-gb',
-		logo: 'images/onenote.svg'
-	},
-	{
-		name: 'OneDrive',
-		link: 'https://stpaulsschool1509-my.sharepoint.com/',
-		logo: 'images/onedrive.svg'
-	},
-	{
-		name: 'GCSE Countdown',
-		link: 'https://gcse-countdown.github.io',
-		logo: 'https://raw.githubusercontent.com/gcse-countdown/gcse-countdown.github.io/0b7d052a8bf383c2f9fc0bacd971b7862ab73478/gcse_favicon.svg',
-		tag: 'NEW!'
-	},
+	{ empty: true },
+	{ empty: true },
 	{
 		name: 'Feedback',
 		link: 'https://forms.gle/rQR9btgXVkg6itiy8',

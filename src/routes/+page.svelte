@@ -100,9 +100,9 @@
 <style>
 	:root {
 		--mobile-cols: 3;
-		--mobile-rows: 9;
+		--mobile-rows: 7;
 		--desktop-cols: 5;
-		--desktop-rows: 5;
+		--desktop-rows: 4;
 	}
 
 	@keyframes pan {
@@ -278,7 +278,8 @@
 
 	/* mobile only */
 	@media (max-width: 767px) {
-		.item, .front {
+		.item,
+		.front {
 			border-radius: 10px;
 		}
 
