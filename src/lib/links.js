@@ -86,7 +86,11 @@ export const LINKS = [
 		link: 'https://stpauls.uk.uniflowonline.com/#Dashboard',
 		logo: 'images/uniflow.png'
 	},
-	{ empty: true },
+	{
+		name: 'Sharepoint',
+		link: 'https://stpaulsschool1509.sharepoint.com/sites/sps-Home',
+		logo: 'images/sharepoint.svg'
+	},
 	{ empty: true },
 	{
 		name: 'Feedback',
